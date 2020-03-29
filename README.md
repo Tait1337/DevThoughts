@@ -1,7 +1,3 @@
-# Welcome
-Infos, Best Practices and Ideas about Application Frameworks, Libs and Architecture
-
-Topics:
 - Tech News
 - Coding Best Practics
   - Code-Style
@@ -22,17 +18,17 @@ Topics:
 - Design Pattern
   - Gang of four
 
-## Tech News
+# Tech News
 Some text here.
 
-## Coding Best Practics
+# Coding Best Practics
 Some text here.
 
-## Code Templates
+# Code Templates
 Some text here.
 
-## Architecture Pattern
+# Architecture Pattern
 Some text here.
 
-## Design Pattern
+# Design Pattern
 Some text here.
