@@ -1,4 +1,3 @@
-- Tech News
 - Coding Best Practics
   - Code-Style
   - Configuration
@@ -18,17 +17,27 @@
 - Design Pattern
   - Gang of four
 
-# Tech News
-Some text here.
-
 # Coding Best Practics
-Some text here.
+This Chapter focus on best practics about writing source code. 
+## Code-Style
+## Configuration
+## Security
+## UI
+## Backend
+## Testing
+## Monitoring
 
 # Code Templates
-Some text here.
+This Chapter contains usefull source code examples for common development problems.
+## Configuration
+## Security
+## UI
+## Backend
+## Testing
+## Monitoring
 
 # Architecture Pattern
-Some text here.
+This Chapter focus on pattern for whole software systems. Its focus is on a higher level of abstraction. 
 
 # Design Pattern
-Some text here.
+This Chapter focus on pattern for common occurring problems while development.  It's focus is on a lower level of abstraction.
