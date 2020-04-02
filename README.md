@@ -152,7 +152,15 @@ This Chapter contains usefull source code examples for co
 
 
 # Architecture Pattern
-This Chapter focus on pattern for whole software systems. Its focus is on a higher level of abstraction. 
+This Chapter focus on pattern for whole software systems. Its focus is on a higher level of abstraction.
+[architecture1.png]
+[architecture2.png]
+[architecture3.png]
+- securing, tracing, health checking, scaling and downtime of services -> solution: use template project and/or use messaging
+- creating doublicate DAOs in backend and frontend -> solution: use server-side rendering (vaadin) or non-typed json's => use contract first approach to make interface clear
+- mapping from DAOs to Entity and back -> solution: create a helper-service for this
+- validating forms and backend service -> solution: use validation in backend and show errors in frontend
+- multi tanancy support -> solution: deploy environment for each tenant
 
 
 # Design Pattern
