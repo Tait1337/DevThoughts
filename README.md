@@ -36,9 +36,16 @@ This Chapter focus on best practics about writing source code.
 
 ## General
 -	Whenever possible use existing Pattern and Standards within your System Components. Note: This doesn't mean that you should use common Frameworks. Standards and Pattern should have a non Framework/Library focus.
+- Try to achieve Clean Code with KISS, YAGNI and DRY. Always do a refactoring before completion of work.
 - Don't use Developer Teams with more than 6 Persons.
 -	Highly automate all your tasks e.g. builds, tests and deployments.
 - Try to reduce complexity by building solutions that (a) focus on a low number of external dependencies and (b) solves only the existing requirements and not more predicted ones.
+-	Document everything to the extent that each anyone can familiarize themselves with the topic shortly
+- Cover 'Not Null' Design -> @NonNullByDefault @Nullable
+- Never hide potential errors -> own exceptions, allow nulls, empty collections
+- Use Modules -> Java and Maven for seperation
+-	Use packages -> for unterstanding
+- Cover aspects of non-blocking / multithreading: use only immutable objects and threadsafe classes
 
 ## Configuration
 -	Externalize all your configuration f.e. via propertyfiles.
@@ -84,15 +91,27 @@ This Chapter focus on best practics about writing source code.
 ## Frameworks & Applications
 ### Spring
 #### General
+- Use dependency Injection always via Constructur and not via Annotation
 #### Configuration
 #### Controller
 - RESTful API -> naming
 - Return response codes and response details only on debug log-level in error cases
-- Use Bean Validation for validating request data
+- Use Bean Validation for validating request data. If you need more use build your own Constaintvalidator.
 - Use Annotations or Filters for authentication and identification
+- Controller have to be stateless
+- Controllers should not execute business logic but rely on delegation.
+- Controllers should deal with the HTTP layer of the application. This should not be passed down to Services.
+-	Controller should deal with Security
+-	Use OpenAPI for documentation
 #### Service
+- Use Interfaces to describe the behaviour
+- Contains the Business Logic – mostly DTO input and DTO output
+- Must be so generic that it is simply reusable
 #### Repository
 - Use only the Query Interface to ensure DBMS neutrality
+- Use Enums in Entities as String
+- Use Pagable in the Repository Interfaces
+- Use lombock @Data
 ### Angular
 ### Git
 ### IntelliJ
