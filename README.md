@@ -8,10 +8,22 @@
   - Testing
   - Deployment
   - Monitoring
+  - Frameworks
+    - Spring
+    - Angular
 - Code Templates
   - General
-  - Spring
-  - Kotlin
+  - Configuration
+  - Security
+  - Communication
+  - UI
+  - Backend
+  - Testing
+  - Deployment
+  - Monitoring
+  - Frameworks
+    - Spring
+    - Angular
 - Architecture Pattern
   - Domain Driven Design (DDD)
   - Clean Code
@@ -69,15 +81,55 @@ This Chapter focus on best practics about writing source code.
 -	Make flows in the system tracable e.g. via unique ID or by using distributed tracing solutions.
 -	Provide Healthchecks.
 
+## Frameworks & Applications
+### Spring
+#### General
+#### Configuration
+#### Controller
+- RESTful API -> naming
+- Return response codes and response details only on debug log-level in error cases
+- Use Bean Validation for validating request data
+- Use Annotations or Filters for authentication and identification
+#### Service
+#### Repository
+- Use only the Query Interface to ensure DBMS neutrality
+### Angular
+### Git
+### IntelliJ
+#### Hot Keys
+- Auto help = Alt+Enter
+- Show method signature = Strg+Q
+- Search file = Shift+Shift
+- Navigate between tabs = ???7
+- Select block = Strg+W
+- Format code = Strg+Alt+L
+- Rename = Shift+F6
+- Search & Replace = Strg+R
+- New file = Strg+Alt+Insert
+- Autogeneration = Alt + Insert
+- Code templates = Strg+J
+- git commit & push = Strg+K
+- Debug step = F8
+#### Refactoring
 
 # Code Templates
-This Chapter contains usefull source code examples for common development problems.
+This Chapter contains usefull source code examples for co
+#### Service
+#### Repositorymmon development problems.
+## General
 ## Configuration
 ## Security
+## Communication
 ## UI
 ## Backend
 ## Testing
+## Deployment
 ## Monitoring
+## Frameworks & Applications
+### Spring
+### Angular
+### Git
+### IntelliJ
 
 
 # Architecture Pattern
