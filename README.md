@@ -33,7 +33,7 @@
   - Gang of four
 
 # News
-- Want to change some source code on GitHub but have no local IDE running? Simply use Gitpod to start an Visual Code based online IDE directly from the GitHub repository of interest: http://gitpod.io/#<GitHub repository url>
+- Want to change some source code on GitHub but have no local IDE running? Simply use Gitpod to start an Visual Code based online IDE directly from the GitHub repository of interest: Just add http://gitpod.io/# before your GitHub repository url.
 
 
 # Coding Best Practics
