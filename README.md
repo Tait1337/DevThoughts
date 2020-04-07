@@ -166,6 +166,7 @@ This Chapter focus on pattern for whole software systems. Its focus is on a high
 - mapping from DAOs to Entity and back -> solution: create a helper-service for this
 - validating forms and backend service -> solution: use validation in backend and show errors in frontend
 - multi tanancy support -> solution: deploy environment for each tenant
+- Servless Pattern: https://medium.com/@taibi.davide/serverless-patterns-e1fb3f1d753e
 
 
 # Design Pattern
