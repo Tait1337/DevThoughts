@@ -169,7 +169,8 @@ This Chapter focus on pattern for whole software systems. Its focus is on a high
 - validating forms and backend service -> solution: use validation in backend and show errors in frontend
 - multi tanancy support -> solution: deploy environment for each tenant
 - Servless Pattern: https://medium.com/@taibi.davide/serverless-patterns-e1fb3f1d753e
-
+- DDD
+![DDD](/DDD.png)
 
 # Design Pattern
 This Chapter focus on pattern for common occurring problems while development.  It's focus is on a lower level of abstraction.
