@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DevThoughts</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7105c836e5.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="headerlogo">
+            <a href="https://github.com/tait1337"><img alt="github" src="img/github.svg" width="50px" height="50px"></a>
+        </div>
+        <div class="headertext">
+            <p>Hello, my name is <span>Oliver Tribess</span></p>
+            <h1>This is my <span>Blog</span> DevThoughts</h1>
+        </div>
+    </header>
+
+    <div class="navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#bestpractics">Coding Best Practics</a></li>
+            <li><a href="#snippets">Snippets</a></li>
+            <li><a href="#pattern">Pattern</a></li>
+            <ul>
+                <li><a href="#pattern-architecture">Architecture Pattern</a></li>
+                <li><a href="#pattern-design">Design Pattern</a></li>
+            </ul>
+            <li><a href="#misc">Misc</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <div class="grid">
+            <div class="card">
+                <div class="cardheader"><i class="fas fa-bug" style="color:#ee7752;"></i></div>
+                <div class="cardtext">Best Practice for your Application</div>
+                <div class="cardsubtext">A best practice is a method or technique that has been generally accepted as superior to any alternatives because it produces results that are superior to those achieved by other means or because it has become a standard way of doing things.</div>
+                <div class="cardaction"><button onclick="location.href='#bestpractics';">Read more</button></div>
+            </div>
+            <div class="card">
+                <div class="cardheader"><i class="fas fa-magic" style="color:#e73c7e;"></i></div>
+                <div class="cardtext">Snippets that make you faster</div>
+                <div class="cardsubtext">Ready to use common constructs that you can insert into your code to solve specific problems.</div>
+                <div class="cardaction"><button onclick="location.href='#snippets';">Read more</button></div>
+            </div>
+            <div class="card">
+                <div class="cardheader"><i class="fas fa-swatchbook" style="color:#23a6d5;"></i></div>
+                <div class="cardtext">Common architecture and design Pattern</div>
+                <div class="cardsubtext">An pattern is a general, reusable solution to a commonly occurring problem in software architecture or -design within a given context. It's not a finished design but it is a template for how to solve a problem that can be used in many different situations.</div>
+                <div class="cardaction"><button onclick="location.href='#pattern';">Read more</button</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="articles">
+
+            <h2><a name="bestpractics">Coding Best Practics</a></h2><hr>
+            <p>This Chapter focus on best practics about writing source code.</p>
+            <img src="img/application.png" width="600px;"/>
+            <h3>General</h3>
+            <ul>
+                <li>Whenever possible use existing Pattern and Standards within your System Components. This doesn’t mean that you should use (common) Frameworks. Standards and Pattern should have a non Framework / Library focus and brings in battle proofen solutions.</li>
+                <li>Try to achieve <a href="#pattern-architecture">Clean Code</a> with <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>, <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a> and <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>. Always do a refactoring before completion of work. All this results in a maintainable code base.</li>
+                <li>Don’t use Developer Teams with more than 6 Persons to stay effective.</li>
+                <li>Highly automate all your tasks e.g. builds, tests and deployments to be efficient.</li>
+                <li>Run <a href="https://en.wikipedia.org/wiki/Static_program_analysis">static code analyses</a> and <a href="https://en.wikipedia.org/wiki/Lint_(software)">linter</a> your code to increase maintainability.</li>
+                <li>Try to reduce complexity by building solutions that (a) focus on a low number of external dependencies and (b) solves only the existing requirements and not more predicted ones (less is more).</li>
+                <li>Document everything to the extent that anyone else can familiarize themselves with the topic shortly. Take special care on public visible Components.</li>
+                <li>Structure your code. Use <a href="https://en.wikipedia.org/wiki/Java_Platform_Module_System">modules</a> (e.g. Java Projects) for access seperation and <a href="https://en.wikipedia.org/wiki/Java_package">packages</a> to help others understand the logical application structure.</li>
+                <li>Never hide potential errors. (Re)throw (own) Exceptions with appropriate messages.</li>
+                <li>Cover 'not null' Design. Use <a href="https://devdocs.io/openjdk/java/util/collections#emptyList--">empty Collections</a>, prefer <a href="https://devdocs.io/openjdk/java/lang/integer#valueOf-int-">.valueOf()</a> instead of .toString(), prefer the known not null value on left side of <a href="https://devdocs.io/openjdk/java/lang/object#equals-java.lang.Object-">.equals()</a> calls. Never return null use <a href="https://devdocs.io/openjdk/java/util/optional">Optional</a> if reasonable. Never accept null as parameter use <a href="https://devdocs.io/openjdk/java/util/objects#requireNonNull-T-">Objects.requireNonNull()</a> to fail fast in this case. Set <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/lang/NonNullApi.html">@NonNullApi</a> in package-info.java to get hints in your IDE for this cases.
+                <li>Support concurrency by use only <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable objects</a> (e.g. with <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builders</a>) and <a href="https://www.baeldung.com/java-thread-safety">threadsafe classes</a>.</li>
+            </ul>
+            <h3>Configuration</h3>
+            <ul>
+                <li>Externalize all your configuration (e.g. via Properties file) for having a single point of truth.</li>
+                <li>Make it possible to overwrite configurations after deployment to adapt on different environments.</li>
+            </ul>
+            <h3>Security</h3>
+            <ul>
+                <li>Use proofen external libraries and applications for solving security requirements  (e.g. authentication).</li>
+                <li>Focus on security solutions that are transparent to the application (e.g. Database internal encryption, Transportlayer security like HTTPS).</li>
+                <li>Implement validation checks always on backend side. Inside the frontend you can add them too but only for a better user experience.</li>
+                <li>Protect sensitive and personal data (e.g. encryption, anonymization, no logging) .</li>
+            </ul>
+            <h3>Communication</h3>
+            <ul>
+                <li>Abstract the communication protocol (e.g. http) within your application to ensure interchangeability.</li>
+                <li>Reduce and Compress your communication data to reduce size and network latency.</li>
+                <li>Provide a version number in your external APIs to allow changes without breaking client contracts.</li>
+                <li>Document your APIs precisely and provide a export that can be used for clients as a contract-first-approach.</li>
+                <li>Don’t require state. Stateless applications can be scaled much better.</li>
+                <li>Use Publish-Subscribe Pattern for notifications.</li>
+            </ul>
+            <h3>UI</h3>
+            <ul>
+                <li>Should be looking attractive to be more trustworthy for users.</li>
+                <li>Has to be fast to meet the users expectations.</li>
+                <li>Support multi language to be accessible by a wide audience.</li>
+                <li>Provide a user manual that shows users how to use available features.</li>
+            </ul>
+            <h3>Backend</h3>
+            <ul>
+                <li>Support <a href="https://en.wikipedia.org/wiki/Multitenancy">multitenancy</a> down to the storage level (e.g. use seperate database for each tenant or deploy for each tenant a individual environment).</li>
+                <li>Respect the principle of data minimisation to be compliant with <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a>.</li>
+            </ul>
+            <h3>Testing</h3>
+            <ul>
+                <li>Write <a href="https://en.wikipedia.org/wiki/Unit_testing">Unittests</a> to test for expected domain behaviour. Measure your <a href="https://en.wikipedia.org/wiki/Code_coverage">code coverage</a>.</li>
+                <li>Write <a href="https://en.wikipedia.org/wiki/Integration_testing">Integrationtests</a> to test for expected behaviour between Modules.</li>
+                <li>Write Architecturetests to detect architectural defects (e.g. naming conventions, layer dependencies).</li>
+            </ul>
+            <h3>Deployment and Runtime</h3>
+            <ul>
+                <li>Make your application easy to install (e.g. no manual steps / <a href="https://en.wikipedia.org/wiki/Software_as_a_service">SaaS</a>, provide a installation manual) .</li>
+                <li>Make your application easy to update (e.g. auto. update checks, no manual steps, rollback possibility).</li>
+                <li>Support backup and recovery (e.g. auto. regular backups, provide a backup and recover manual) </li>
+            </ul>
+            <h3>Monitoring</h3>
+            <ul>
+                <li>Make flows in the application tracable (e.g. use unique ID, use <a href="https://en.wikipedia.org/wiki/Tracing_(software)">distributed tracing solutions</a>) to ease error reproduction.</li>
+                <li>Provide application health checks to enable the underlying Platform to handle accordingly to the actual state.</li>
+            </ul>
+
+            <h2><a name="snippets">Snippets</a></h2><hr>
+            <p>This Chapter contains usefull source code examples for common development problems.</p>
+
+            <h3>Spring</h3>
+            <h4>Controller</h4>
+            <script src="https://gist.github.com/Tait1337/b577e142ac210bc487a1350994cdf7ee.js"></script>
+            <h4>Service</h4>
+            <script src="https://gist.github.com/Tait1337/d39c3dc8f386bf57faf329c48e2d93f2.js"></script>
+            <h4>Repository</h4>
+            <script src="https://gist.github.com/Tait1337/825075497c1180e65ee6a17058dbb1a5.js"></script>
+
+            <h2><a name="pattern">Pattern</a></h2><hr>
+
+            <h2><a name="pattern-architecture">Architecture Pattern</a></h2><hr>
+            <img src="img/architecture-pattern.png" width="300px"/>
+            <p>This Chapter focus on pattern for whole software systems. Its focus is on a higher level of abstraction.</p>
+            <h3>Base Architecture Styles</h3>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Multitier_architecture">Layered (Monolith, Multitier, n-tier, MVC, Client-Server)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Microkernel">Microkernel (Plugin architecture)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Microservices">Service-based (Service-oriented, Microservice, Distributed)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Space-based_architecture">Space-based</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Event-driven_architecture">Event-driven (CQRS / Event Sourcing)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Serverless_computing">Serverless</a></li>    
+            </ul>
+            <h3>Domain Driven Design (DDD)</h3>
+            <p><a href="https://en.wikipedia.org/wiki/Domain-driven_design">Read more</a></p>
+            <h3>Clean Code</h3>
+            <p><a href=" https://de.wikipedia.org/wiki/Clean_Code">Read more</a>
+            <h3>Arc42</h3>
+            <p><a href="https://arc42.org">Read more</a></p>
+
+            <h2><a name="pattern-design">Design Pattern</a></h2><hr>
+            <img src="img/design-pattern.png" width="300px"/>
+            <p>This Chapter focus on pattern for common occurring problems while development. It’s focus is on a lower level of abstraction.</p>
+            <h3>Package principles</h3>
+            <p><a href="https://en.wikipedia.org/wiki/Package_principles">Read more</a></p>
+            <h3>General Responsibility Assignment Software Principles (GRASP)</h3>
+            <p><a href="https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)">Read more</a></p>
+            <h3>Single-responsibility, Open–closed, Liskov substitution, Interface segregation, Dependency inversion Principle (SOLID)</h3>
+            <p><a href="https://en.wikipedia.org/wiki/SOLID">Read more</a></p>
+            <h3>Inheritance</h3>
+            <p><a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">Read more</a></p>
+            <h3>Gang of Four (GoF)</h3>
+            <p><a href="https://en.wikipedia.org/wiki/Design_Patterns">Read more</a></p>
+            <h3>12 Factor App</h3>
+            <p><a href="https://12factor.net">Read more</a></p>
+            <h3>Philipp Hauer's Coding Wisdoms</h3>
+            <p><a href="https://phauer.com/2020/wall-coding-wisdoms-quotes/">Read more</a></p>
+
+            <h2><a name="misc">Misc</a></h2><hr>
+            <img src="img/misc.png" width="300px"/>
+            <p>This Chapter contains usefull other stuff.</p>
+            <h3>IntelliJ IDEA</h3>
+            <h4>Hot Keys</h4>
+            <table>
+                <tr>
+                    <th>Action</th>
+                    <th>Shortcut</th>
+                </tr>
+                <tr>
+                    <td>Auto help</td>
+                    <td>Alt + Enter</td>
+                </tr>
+                <tr>
+                    <td>Show method signature</td>
+                    <td>Strg + Q</td>
+                </tr>
+                <tr>
+                    <td>Search</td>
+                    <td>Shift + Shift</td>
+                </tr>
+                <tr>
+                    <td>Navigate between tabs</td>
+                    <td>Alt + Left/Right</td>
+                </tr>
+                <tr>
+                    <td>Select block</td>
+                    <td>Strg + W</td>
+                </tr>
+                <tr>
+                    <td>Go to declaration</td>
+                    <td>Strg + B</td>
+                </tr>
+                <tr>
+                    <td>Go back</td>
+                    <td>Strg + Alt + Left</td>
+                </tr>
+                <tr>
+                    <td>Format code</td>
+                    <td>Strg + Alt + L</td>
+                </tr>
+                <tr>
+                    <td>Rename</td>
+                    <td>Shift + F6</td>
+                </tr>
+                <tr>
+                    <td>Search and Replace</td>
+                    <td>Strg + R</td>
+                </tr>
+                <tr>
+                    <td>New file</td>
+                    <td>Strg + Alt + Insert</td>
+                </tr>
+                <tr>
+                    <td>Autogeneration</td>
+                    <td>Alt + Insert</td>
+                </tr>
+                <tr>
+                    <td>Code templates</td>
+                    <td>Strg + J</td>
+                </tr>
+                <tr>
+                    <td>Run Debug</td>
+                    <td>Shift + F9</td>
+                </tr>
+                <tr>
+                    <td>Debug step</td>
+                    <td>F8</td>
+                </tr>
+                <tr>
+                    <td>Refactoring - extract to constant</td>
+                    <td>Strg + Alt + C</td>
+                </tr>
+                <tr>
+                    <td>Refactoring - extract to method</td>
+                    <td>Strg + Alt + M</td>
+                </tr>
+                <tr>
+                    <td>Refactoring - inline</td>
+                    <td>Strg + Alt + N</td>
+                </tr>              
+                <tr>
+                    <td>Commit and push</td>
+                    <td>Strg+K</td>
+                </tr>
+            </table>
+            Find <a href="https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf">here</a> the full list of hotkeys.
+            <h4>Settings</h4>
+            <table>
+                <tr>
+                    <th>Behaviour</th>
+                    <th>Steps to activate</th>
+                </tr>
+                <tr>
+                    <td>Comment code with Shift + 7 for german keyboard layout</td>
+                    <td>
+                        Open the Settings (Strg + Alt + S). Navigate to "Keymap". Navigate to "Main menu -> Code -> Folding -> Comment with Line Comment". Set the Shortcut to "Strg + 7" (replace other assignments).
+                    </td>
+                </tr>
+                <tr>
+                    <td>Auto. import unambiguous classes</td>
+                    <td>
+                        Open the Settings (Strg + Alt + S). Navigate to "Editor -> General -> Auto Import". Check "Add unambiguous imports on the fly".
+                    </td>
+                </tr>
+                <tr>
+                    <td>Show NotNull assignments as errors</td>
+                    <td>
+                        Open the Settings (Strg + Alt + S). Navigate to "Editor -> Inspections". Navigate to "Java -> Probable bugs -> Constants conditions & exceptions" and set the Severity to "Error".
+                    </td>
+                </tr>
+                <tr>
+                    <td>Activate hot reload of classes while debugging (HotSwap) with shortcut "Ctrl + S"</td>
+                    <td>
+                        Open the Search (Shift Shift) and type "Registry" and open it. Check "compiler.automake.allow.when.app.running".<br/>
+                        Open the Settings (Strg + Alt + S). Navigate to "Keymap". Navigate to "Plug-ins -> Java -> Rebuild". Set the Shortcut to "Ctrl + S" (replace other assignments).
+                    </td>
+                </tr>
+            </table>
+            <h4>Plugins</h4>
+            <ul>
+                <li><a href="https://plugins.jetbrains.com/plugin/12100-dark-purple-theme">Dark Purple Theme</a></li>
+                <li><a href="https://plugins.jetbrains.com/plugin/8575-nyan-progress-bar">Nyan Progress Bar</a></li>
+                <li><a href="https://plugins.jetbrains.com/plugin/7017-plantuml-integration">PlantUML integration</a></li>
+                <li><a href="https://plugins.jetbrains.com/plugin/7499-gittoolbox">GitToolBox</a></li>
+                <li><a href="https://plugins.jetbrains.com/plugin/6317-lombok/">Lombok</a></li>
+            </ul>
+            <h3>Docker</h3>
+            <table>
+                <tr>
+                    <th>Action</th>
+                    <th>Command</th>
+                </tr>
+                <tr>
+                    <td>Show all images</td>
+                    <td>docker images</td>
+                </tr>
+                <tr>
+                    <td>List all container</td>
+                    <td>docker ps -a</td>
+                </tr>
+                <tr>
+                    <td>Stop all running container</td>
+                    <td>docker stop $(sudo docker ps -aq)</td>
+                </tr>
+                <tr>
+                    <td>Remove all stopped container</td>
+                    <td>docker system prune -f --volumes</td>
+                </tr>
+                <tr>
+                    <td>Remove all stopped container and images</td>
+                    <td>docker system prune -a -f</td>
+                </tr>
+            </table>
+            <h3>Git</h3>
+            <table>
+                <tr>
+                    <th>Action</th>
+                    <th>Command</th>
+                </tr>
+                <tr>
+                    <td>Clone - Get a local copy of a remote source</td>
+                    <td>git clone <i>url</i></td>
+                </tr>
+                <tr>
+                    <td>Add files to local copy</td>
+                    <td>git add <i>file</i></td>
+                </tr>
+                <tr>
+                    <td>Stage & commmit - fix a set of related changes</td>
+                    <td>git commit -m “<i>message</i>”</td>
+                </tr>
+                <tr>
+                    <td>Push the commits to the remote server</td>
+                    <td>git push</td>
+                </tr>
+            </table>
+            <h3>Gitpod online IDE</h3>
+            <p>
+                Want to change some source code on GitHub but have no local IDE running?
+                Simply use Gitpod to start an Visual Code based online IDE directly from the GitHub repository of interest: Just add <a href="http://gitpod.io/#">http://gitpod.io/#</a> before your GitHub repository url.
+            </p>
+        </div>
+            
+    </main>
+
+    <footer>
+        <p>Copyright © 2020 Oliver Tribess</p>
+    </footer>
+
+</body>
+
+</html>

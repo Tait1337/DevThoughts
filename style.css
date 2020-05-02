@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+    background-color: #282828;
+    font-family: "Segoe UI", 'Roboto', sans-serif;
+}
+
+header {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 200px;
+    padding-top: 50px;
+}
+
+.headerlogo {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.headertext {
+    text-align: center;
+}
+
+.headertext span {
+    color: #ad0e14;
+    font-weight: bold;
+}
+
+main {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 3%;
+}
+
+footer {
+    text-align: end;
+    padding-right: 25px;
+}
+
+.navigation {
+    float: left;
+    padding-left: 20px;
+    margin-left: 20px;
+    padding-top: 4%;
+    color: #ffffffc4;
+}
+
+.navigation a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+ul {
+    padding-left: 1em;
+    list-style: '\00BB \0020 ';
+    color: #ffffffc4;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+@media only screen and (max-width: 1300px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+.articles {
+    padding-top: 2em;
+}
+
+.articles img {
+    float: right;
+}
+
+p {
+    color: #ffffffc4;
+}
+
+a {
+    color: inherit;
+}
+
+h2, h3, h4, h5, h6 {
+    padding-top: 1em;
+    text-decoration: none;
+}
+
+
+table {
+    border-spacing: 0px;
+}
+
+th, td {
+    text-align: left;
+    border-bottom: 1px solid #ffffff;
+    padding-right: 1em;
+}
+
+.card {
+    width: 400px;
+    text-align: center;
+
+}
+
+.cardheader {
+    font-size: 100px;
+}
+
+.cardtext {
+    font-weight: bold;
+}
+
+.cardsubtext {
+    color: #ffffffc4;
+    min-height: 120px;
+}
+
+button {
+    display: inline-block;
+    border: 1px solid #4b4b4b;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: transparent;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #4b4b4b;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
