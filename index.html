@@ -74,7 +74,6 @@
                 <li>Structure your code. Use <a href="https://en.wikipedia.org/wiki/Java_Platform_Module_System">modules</a> (e.g. Java Projects) for access seperation and <a href="https://en.wikipedia.org/wiki/Java_package">packages</a> to help others understand the logical application structure.</li>
                 <li>Never hide potential errors. (Re)throw (own) Exceptions with appropriate messages.</li>
                 <li>Cover 'not null' Design. Use <a href="https://devdocs.io/openjdk/java/util/collections#emptyList--">empty Collections</a>, prefer <a href="https://devdocs.io/openjdk/java/lang/integer#valueOf-int-">.valueOf()</a> instead of .toString(), prefer the known not null value on left side of <a href="https://devdocs.io/openjdk/java/lang/object#equals-java.lang.Object-">.equals()</a> calls. Never return null use <a href="https://devdocs.io/openjdk/java/util/optional">Optional</a> if reasonable. Never accept null as parameter use <a href="https://devdocs.io/openjdk/java/util/objects#requireNonNull-T-">Objects.requireNonNull()</a> to fail fast in this case. Set <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/lang/NonNullApi.html">@NonNullApi</a> in package-info.java to get hints in your IDE for this cases.
-                <li>Support concurrency by use only <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable objects</a> (e.g. with <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builders</a>) and <a href="https://www.baeldung.com/java-thread-safety">threadsafe classes</a>.</li>
             </ul>
             <h3>Configuration</h3>
             <ul>
@@ -96,6 +95,11 @@
                 <li>Document your APIs precisely and provide a export that can be used for clients as a contract-first-approach.</li>
                 <li>Don’t require state. Stateless applications can be scaled much better.</li>
                 <li>Use Publish-Subscribe Pattern for notifications.</li>
+            </ul>
+            <h3>Concurrency</h3>
+            <ul>
+                <li>Use only <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable objects</a> (e.g. with <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builders</a>) and <a href="https://www.baeldung.com/java-thread-safety">threadsafe classes</a>.</li>
+                <li>For more complex behaviour make use of the <a href="https://en.wikipedia.org/wiki/Actor_model">Actor Model.</a></li>
             </ul>
             <h3>UI</h3>
             <ul>
