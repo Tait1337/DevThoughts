@@ -53,7 +53,7 @@ To contribute just create an issue together with the pull request that contains 
 
 ## Versioning
 
-We use [GitHub](https://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/tait1337/DevThoughts/tags). 
+We use [GitHub](https://github.com) for versioning. For the versions available, see the [tags on this repository](https://github.com/tait1337/DevThoughts/tags). 
 
 ## Authors
 
@@ -65,5 +65,5 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE.md](LIC
 
 ## Acknowledgments
 
-* Fontawesome for providing icons
-* GitHub Gist for hosting the all code snippets
+* [Fontawesome](https://fontawesome.com) for providing icons
+* [GitHub Gist](https://gist.github.com) for hosting the all code snippets
