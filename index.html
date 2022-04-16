@@ -328,6 +328,17 @@
                     <td>docker ps -a</td>
                 </tr>
                 <tr>
+                    <td>Build docker image</td>
+                    <td>docker build .</td>
+                </tr>
+                <tr>
+                    <td>Build docker image without extended log limit [output clipped, log limit 1MiB reached]</td>
+                    <td>
+                        docker buildx create --use --name larger_log --driver-opt env.BUILDKIT_STEP_LOG_MAX_SIZE=50000000
+                        docker buildx build .
+                    </td>
+                </tr>
+                <tr>
                     <td>Open interactive shell on a container</td>
                     <td>docker exec -it &lt;container-id&gt; /bin/bash</td>
                 </tr>
