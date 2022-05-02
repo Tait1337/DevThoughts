@@ -343,6 +343,10 @@
                     <td>docker exec -it &lt;container-id&gt; /bin/bash</td>
                 </tr>
                 <tr>
+                    <td>Extract a file from a container that fails to start</td>
+                    <td>docker run --rm --entrypoint /bin/sh image_name -c "cat /path/filename" &gt; output_filename</td>
+                </tr>
+                <tr>
                     <td>Stop all running container</td>
                     <td>docker stop $(sudo docker ps -aq)</td>
                 </tr>
